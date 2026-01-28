@@ -14,5 +14,5 @@ The architecture enforces strong security controls, including encryption of data
 
 ## E-Commerce AWS Architectural Design
 
-![E-Commerce Application](https://github.com/Irene890/Images/blob/main/E-Commerce%20App.drawio.png)
+![E-Commerce Application](https://github.com/Irene890/Images/blob/main/E-Commerce%20App.jpg)
 
