@@ -1,9 +1,9 @@
-* Scenario
-Users across Africa resolve the application domain via Route 53, which routes traffic to CloudFront, cloudfront is protected by WAF.
-CloudFront serves cached static content from edge locations and forwards dynamic requests to an Application Load Balancer deployed across two public subnets in separate Availability Zones.
-The ALB routes traffic to EC2 instances running in public subnets across the same AZs. 
-The application stores relational data in an Amazon RDS Multi-AZ deployment and caches frequently accessed data using ElastiCache. 
-Product images are stored securely in Amazon S3, accessed by CloudFront for reads and by EC2 using IAM roles for uploads. 
-The application uses Cloudwatch for centralized dashboard for performance metrics and alarms as well as Cloud trail for logging API calls for security auditing.
+# Scenario
+Primary Region: Africa **(Cape Town) af-south-1** 
+- Closest AWS region to African customers
+- Supoorts core AWS services
 
-** Design
+**E-Commerce APP Scenario** User requests are first resolved through Route 53 and accelerated via CloudFront edge locations to ensure a responsive experience for our African user base. This perimeter is secured by AWS WAF and end-to-end SSL/TLS certificates provided by ACM. Once traffic reaches the regional ALB, it is balanced across EC2 instances residing in separate Availability Zones for maximum fault tolerance. The backend architecture separates concerns by storing product media in S3 (secured via SSE-KMS) and relational records in a Multi-AZ RDS instance. Frequently accessed datasets are offloaded to ElastiCache to reduce database load. For governance and performance tracking, the entire lifecycle is monitored by CloudWatch and audited through CloudTrail.
+
+## E-Commerce AWS Architectural Design
+https://github.com/Irene890/Images/blob/main/E-commerce%20APP.jpg
